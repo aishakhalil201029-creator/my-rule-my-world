@@ -1,2791 +1,13 @@
-/* =====================================================
+/* =========================================================
    MY RULE, MY WORLD
-   Soft Luxury Boutique
-   ===================================================== */
-
-:root {
-
-    /* ---------- Main palette ---------- */
-
-    --ivory: #fcfaf7;
-    --cream: #f7f1ea;
-    --cream-dark: #eee3d8;
-
-    --white: #ffffff;
-
-    --brown-dark: #342822;
-    --brown: #60483d;
-    --brown-light: #8f786d;
-
-    /* ---------- Blush ---------- */
-
-    --blush: #d9aaa7;
-    --blush-dark: #b77f7d;
-    --blush-light: #f4e4e1;
-
-    /* ---------- Gold ---------- */
-
-    --gold: #b99a62;
-    --gold-light: #e9d8b2;
-    --gold-pale: #f6eedf;
-
-    /* ---------- Status ---------- */
-
-    --green: #58735e;
-    --green-light: #e7efe8;
-
-    --red: #a9534d;
-    --red-light: #f7e5e2;
-
-    /* ---------- Borders ---------- */
-
-    --border: #e8ddd4;
-    --border-gold: #dfcda9;
-
-    /* ---------- Shadows ---------- */
-
-    --shadow:
-        0 10px 30px rgba(70, 48, 39, 0.065);
-
-    --shadow-hover:
-        0 17px 40px rgba(70, 48, 39, 0.10);
-
-    --gold-shadow:
-        0 8px 24px rgba(185, 154, 98, 0.14);
-}
-
-
-/* =====================================================
-   RESET
-   ===================================================== */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-
-/* =====================================================
-   BODY
-   ===================================================== */
-
-body {
-
-    min-height: 100vh;
-
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-
-    color: var(--brown-dark);
-
-    /*
-       Soft layered background.
-       Minimal enough for everyday use,
-       but prettier than a flat cream.
-    */
-
-    background:
-
-        radial-gradient(
-            circle at 8% 5%,
-            rgba(239, 216, 209, 0.48),
-            transparent 27%
-        ),
-
-        radial-gradient(
-            circle at 96% 8%,
-            rgba(234, 216, 180, 0.25),
-            transparent 25%
-        ),
-
-        radial-gradient(
-            circle at 50% 100%,
-            rgba(244, 228, 220, 0.30),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            180deg,
-            #fcfaf7 0%,
-            #f9f3ed 100%
-        );
-
-    background-attachment: fixed;
-
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-}
-
-
-/* =====================================================
-   MAIN APP
-   ===================================================== */
-
-.app {
-
-    width: 100%;
-    max-width: 650px;
-
-    margin: 0 auto;
-
-    padding:
-        24px
-        18px
-        70px;
-}
-
-
-/* =====================================================
-   HOME HEADER
-   ===================================================== */
-
-.header {
-
-    position: relative;
-
-    text-align: center;
-
-    padding:
-        38px
-        10px
-        42px;
-}
-
-
-/* Decorative gold line */
-
-.header::after {
-
-    content: "";
-
-    width: 38px;
-    height: 1px;
-
-    display: block;
-
-    margin:
-        20px
-        auto
-        0;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--gold),
-            transparent
-        );
-
-    opacity: 0.8;
-}
-
-
-/* =====================================================
-   HOME LOGO
-   ===================================================== */
-
-.logo {
-
-    font-size: 55px;
-
-    margin-bottom: 13px;
-
-    filter:
-        drop-shadow(
-            0 5px 8px
-            rgba(90, 60, 45, 0.10)
-        );
-
-    animation:
-        softFloat 4s ease-in-out infinite;
-}
-
-
-@keyframes softFloat {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-3px);
-    }
-}
-
-
-/* =====================================================
-   HOME TITLE
-   ===================================================== */
-
-.header h1 {
-
-    /*
-       Clear body font,
-       elegant serif for the brand.
-    */
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 37px;
-
-    font-weight: 500;
-
-    letter-spacing: -0.045em;
-
-    line-height: 1.15;
-
-    color: var(--brown-dark);
-
-    margin-bottom: 10px;
-}
-
-
-.header p {
-
-    color: var(--brown-light);
-
-    font-size: 14px;
-
-    line-height: 1.5;
-
-    letter-spacing: 0.045em;
-}
-
-
-/* =====================================================
-   HOME MENU
-   ===================================================== */
-
-.menu {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 15px;
-}
-
-
-.menu-card {
-
-    position: relative;
-
-    width: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 17px;
-
-    padding: 20px;
-
-    border:
-        1px solid
-        rgba(232, 221, 212, 0.9);
-
-    border-radius: 21px;
-
-    background:
-        rgba(255, 255, 255, 0.78);
-
-    color: inherit;
-
-    text-decoration: none;
-
-    text-align: left;
-
-    cursor: pointer;
-
-    box-shadow: var(--shadow);
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    transition:
-        transform 0.22s ease,
-        box-shadow 0.22s ease,
-        border-color 0.22s ease;
-}
-
-
-/* Tiny gold highlight */
-
-.menu-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: 18px;
-    bottom: 18px;
-
-    width: 2px;
-
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            var(--gold),
-            transparent
-        );
-
-    opacity: 0;
-
-    transition:
-        opacity 0.22s ease;
-}
-
-
-.menu-card:hover {
-
-    transform: translateY(-3px);
-
-    border-color:
-        rgba(185, 154, 98, 0.38);
-
-    box-shadow: var(--shadow-hover);
-}
-
-
-.menu-card:hover::before {
-
-    opacity: 0.75;
-}
-
-
-.menu-card:active {
-
-    transform: scale(0.985);
-}
-
-
-/* =====================================================
-   MENU ICON
-   ===================================================== */
-
-.icon {
-
-    width: 55px;
-    height: 55px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    border-radius: 17px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #f5e8e4,
-            #faf1ed
-        );
-
-    border:
-        1px solid
-        rgba(185, 154, 98, 0.12);
-
-    font-size: 27px;
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.8);
-}
-
-
-/* =====================================================
-   MENU TEXT
-   ===================================================== */
-
-.menu-card h2 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 20px;
-
-    font-weight: 500;
-
-    line-height: 1.2;
-
-    margin-bottom: 5px;
-
-    color: var(--brown-dark);
-}
-
-
-.menu-card p {
-
-    color: var(--brown-light);
-
-    font-size: 13px;
-
-    line-height: 1.45;
-}
-
-
-/* =====================================================
-   MENU ARROW
-   ===================================================== */
-
-.arrow {
-
-    margin-left: auto;
-
-    font-size: 23px;
-
-    color: var(--gold);
-
-    transition:
-        transform 0.22s ease,
-        color 0.22s ease;
-}
-
-
-.menu-card:hover .arrow {
-
-    transform: translateX(4px);
-
-    color: var(--blush-dark);
-}
-
-
-/* =====================================================
-   PAGE HEADERS
-   ===================================================== */
-
-.page-header {
-
-    padding:
-        8px
-        2px
-        25px;
-}
-
-
-.back-button {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 5px;
-
-    color: var(--brown);
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    transition:
-        color 0.2s ease;
-}
-
-
-.back-button:hover {
-
-    color: var(--gold);
-}
-
-
-.page-header h1 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 32px;
-
-    font-weight: 500;
-
-    letter-spacing: -0.035em;
-
-    color: var(--brown-dark);
-
-    margin:
-        18px
-        0
-        7px;
-}
-
-
-.page-header p {
-
-    color: var(--brown-light);
-
-    font-size: 14px;
-}
-
-
-/* =====================================================
-   FORMS
-   ===================================================== */
-
-.form-group {
-
-    margin-bottom: 20px;
-}
-
-
-.form-group label {
-
-    display: block;
-
-    margin-bottom: 8px;
-
-    color: var(--brown);
-
-    font-size: 11px;
-
-    font-weight: 750;
-
-    letter-spacing: 0.075em;
-
-    text-transform: uppercase;
-}
-
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-
-    width: 100%;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius: 14px;
-
-    padding:
-        14px
-        15px;
-
-    background:
-        rgba(255, 255, 255, 0.82);
-
-    color: var(--brown-dark);
-
-    font-family: inherit;
-
-    font-size: 15px;
-
-    outline: none;
-
-    box-shadow:
-        0 3px 10px
-        rgba(65, 43, 34, 0.025);
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        transform 0.2s ease;
-}
-
-
-.form-group textarea {
-
-    min-height: 105px;
-
-    resize: vertical;
-}
-
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-
-    color: #b3a39b;
-}
-
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-
-    border-color: var(--gold);
-
-    box-shadow:
-        0 0 0 4px
-        rgba(185, 154, 98, 0.12);
-
-    transform: translateY(-1px);
-}
-
-
-/* =====================================================
-   SAVE / ADD BUTTONS
-   ===================================================== */
-
-.save-order-button,
-.add-order-button {
-
-    width: 100%;
-
-    display: block;
-
-    padding: 16px;
-
-    border: none;
-
-    border-radius: 15px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #665044,
-            #44342d
-        );
-
-    color: white;
-
-    font-family: inherit;
-
-    font-size: 15px;
-
-    font-weight: 700;
-
-    letter-spacing: 0.025em;
-
-    text-align: center;
-
-    text-decoration: none;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 9px 22px
-        rgba(81, 55, 46, 0.18);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        opacity 0.2s ease;
-}
-
-
-.save-order-button:hover,
-.add-order-button:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 13px 28px
-        rgba(81, 55, 46, 0.23);
-}
-
-
-.save-order-button:active,
-.add-order-button:active {
-
-    transform: scale(0.985);
-}
-
-
-.save-order-button:disabled,
-.add-order-button:disabled {
-
-    opacity: 0.55;
-
-    cursor: not-allowed;
-
-    transform: none;
-
-    box-shadow:
-        0 5px 15px
-        rgba(81, 55, 46, 0.10);
-}
-
-
-/* =====================================================
-   ORDERS
-   ===================================================== */
-
-.orders-section {
-
-    width: 100%;
-}
-
-
-.order-list {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 18px;
-
-    margin-top: 18px;
-}
-
-
-.order-card {
-
-    display: flex;
-
-    flex-direction: column;
-
-    overflow: hidden;
-
-    background:
-        rgba(255, 255, 255, 0.90);
-
-    border:
-        1px solid
-        rgba(232, 221, 212, 0.9);
-
-    border-radius: 22px;
-
-    box-shadow: var(--shadow);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.order-card:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow: var(--shadow-hover);
-}
-
-
-/* =====================================================
-   ORDER PHOTO
-   ===================================================== */
-
-.order-bag-photo {
-
-    width: 100%;
-
-    height: 235px;
-
-    display: block;
-
-    object-fit: cover;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #eee3d8,
-            #f8f1ec
-        );
-}
-
-
-.order-bag-photo-placeholder {
-
-    width: 100%;
-
-    height: 235px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #eee3d8,
-            #f8f1ec
-        );
-
-    color: #aa9185;
-
-    font-size: 55px;
-}
-
-
-/* =====================================================
-   ORDER INFORMATION
-   ===================================================== */
-
-.order-information {
-
-    padding:
-        18px
-        18px
-        10px;
-}
-
-
-.order-information h2 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 23px;
-
-    font-weight: 500;
-
-    color: var(--brown-dark);
-
-    margin-bottom: 10px;
-}
-
-
-.order-information p {
-
-    color: #71635c;
-
-    font-size: 14px;
-
-    line-height: 1.5;
-
-    margin-bottom: 6px;
-}
-
-
-.order-bag {
-
-    color: var(--brown) !important;
-
-    font-weight: 700;
-}
-
-
-/* =====================================================
-   ORDER DATE
-   ===================================================== */
-
-.order-date {
-
-    color: #a08d84 !important;
-
-    font-size: 12px !important;
-
-    margin-top: 10px;
-}
-
-
-/* =====================================================
-   ORDER COMPLETION
-   ===================================================== */
-
-.order-complete {
-
-    margin-top: 6px;
-
-    padding:
-        14px
-        18px
-        17px;
-
-    border-top:
-        1px solid
-        var(--border);
-}
-
-
-.order-complete label {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    color: var(--brown);
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-}
-
-
-.order-checkbox {
-
-    width: 22px;
-    height: 22px;
-
-    margin: 0;
-
-    accent-color: var(--gold);
-
-    cursor: pointer;
-}
-
-
-/* =====================================================
-   PRE-ORDER DISPLAY
-   ===================================================== */
-
-.preorder-badge {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    width: fit-content;
-
-    padding:
-        5px
-        9px;
-
-    margin:
-        5px
-        0
-        8px;
-
-    border-radius: 999px;
-
-    background:
-        var(--gold-pale);
-
-    color:
-        #856b38;
-
-    border:
-        1px solid
-        rgba(185, 154, 98, 0.20);
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: 0.06em;
-
-    text-transform: uppercase;
-}
-
-
-.order-card.preorder {
-
-    border-color:
-        rgba(185, 154, 98, 0.35);
-}
-
-
-.order-card.preorder .order-information {
-
-    background:
-
-        linear-gradient(
-            180deg,
-            rgba(250, 243, 230, 0.40),
-            rgba(255, 255, 255, 0)
-        );
-}
-
-
-.order-card.preorder .order-bag {
-
-    color: #856b38 !important;
-}
-
-
-/* =====================================================
-   INVENTORY
-   ===================================================== */
-
-.inventory-list {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 18px;
-}
-
-
-.bag-card {
-
-    overflow: hidden;
-
-    background:
-        rgba(255, 255, 255, 0.93);
-
-    border:
-        1px solid
-        rgba(232, 221, 212, 0.9);
-
-    border-radius: 23px;
-
-    padding: 11px;
-
-    box-shadow: var(--shadow);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.bag-card:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow: var(--shadow-hover);
-}
-
-
-/* =====================================================
-   INVENTORY PHOTO
-   ===================================================== */
-
-.bag-photo-placeholder {
-
-    width: 100%;
-
-    height: 260px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    border-radius: 17px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #eee3d8,
-            #f8f1ec
-        );
-
-    color: #aa9185;
-
-    font-size: 55px;
-}
-
-
-.bag-photo-placeholder img {
-
-    width: 100%;
-
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    transition:
-        transform 0.35s ease;
-}
-
-
-.bag-card:hover
-.bag-photo-placeholder img {
-
-    transform: scale(1.025);
-}
-
-
-/* =====================================================
-   INVENTORY INFORMATION
-   ===================================================== */
-
-.bag-information {
-
-    padding:
-        17px
-        6px
-        5px;
-}
-
-
-.bag-information h2 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 24px;
-
-    font-weight: 500;
-
-    color: var(--brown-dark);
-
-    margin-bottom: 6px;
-}
-
-
-.bag-name {
-
-    color: var(--brown-light);
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    margin-bottom: 11px;
-}
-
-
-.bag-description {
-
-    color: #71635c;
-
-    font-size: 14px;
-
-    line-height: 1.55;
-
-    margin-bottom: 13px;
-}
-
-
-.bag-price {
-
-    color: var(--brown);
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 19px;
-
-    font-weight: 600;
-
-    margin-bottom: 9px;
-}
-
-
-.bag-stock {
-
-    display: inline-block;
-
-    padding:
-        6px
-        10px;
-
-    border-radius: 999px;
-
-    background:
-        var(--green-light);
-
-    color: var(--green);
-
-    font-size: 12px;
-
-    font-weight: 700;
-}
-
-
-/* =====================================================
-   BAG ACTION BUTTONS
-   ===================================================== */
-
-.bag-actions {
-
-    display: flex;
-
-    gap: 10px;
-
-    margin-top: 17px;
-}
-
-
-.bag-actions button {
-
-    flex: 1;
-
-    padding: 12px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    font-family: inherit;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
-}
-
-
-.bag-actions button:hover {
-
-    transform: translateY(-1px);
-
-    opacity: 0.9;
-}
-
-
-.edit-bag-button {
-
-    background:
-        var(--blush-light);
-
-    color: var(--brown);
-}
-
-
-.delete-bag-button {
-
-    background:
-        var(--red-light);
-
-    color: var(--red);
-}
-
-
-/* =====================================================
-   SELECTED BAG PREVIEW
-   ===================================================== */
-
-.selected-bag-preview {
-
-    margin-top: 16px;
-
-    overflow: hidden;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius: 21px;
-
-    background:
-        rgba(255, 255, 255, 0.94);
-
-    box-shadow: var(--shadow);
-}
-
-
-.selected-bag-preview img {
-
-    width: 100%;
-
-    height: 230px;
-
-    display: block;
-
-    object-fit: cover;
-}
-
-
-.selected-bag-details {
-
-    padding: 17px;
-}
-
-
-.selected-bag-details h3 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 21px;
-
-    font-weight: 500;
-
-    margin-bottom: 5px;
-}
-
-
-.selected-bag-details p {
-
-    color: var(--brown-light);
-
-    font-size: 14px;
-
-    margin-top: 5px;
-}
-
-
-.selected-bag-stock {
-
-    color: var(--green) !important;
-
-    font-weight: 700;
-
-    margin-top: 12px !important;
-}
-
-
-.no-photo-preview {
-
-    height: 190px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #eee3d8,
-            #f8f1ec
-        );
-
-    color: #aa9185;
-
-    font-size: 55px;
-}
-
-
-/* =====================================================
-   EMPTY STATES
-   ===================================================== */
-
-.empty-orders {
-
-    padding:
-        48px
-        22px;
-
-    margin-top: 15px;
-
-    text-align: center;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius: 23px;
-
-    background:
-        rgba(255, 255, 255, 0.78);
-
-    box-shadow: var(--shadow);
-}
-
-
-.empty-icon {
-
-    font-size: 52px;
-
-    margin-bottom: 13px;
-}
-
-
-.empty-orders h2 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 22px;
-
-    font-weight: 500;
-
-    color: var(--brown-dark);
-
-    margin-bottom: 8px;
-}
-
-
-.empty-orders p {
-
-    color: var(--brown-light);
-
-    font-size: 14px;
-
-    line-height: 1.5;
-}
-
-
-/* =====================================================
-   PHOTO HELP
-   ===================================================== */
-
-.photo-help {
-
-    margin-top: 7px;
-
-    color: #9c8a81;
-
-    font-size: 12px;
-
-    line-height: 1.45;
-}
-
-
-/* =====================================================
-   COMPLETED ORDER
-   ===================================================== */
-
-.order-card.completed {
-
-    opacity: 0.62;
-
-    background:
-        #f2efec;
-}
-
-
-.order-card.completed h2 {
-
-    text-decoration: line-through;
-}
-
-
-/* =====================================================
-   DASHBOARD
-   ===================================================== */
-
-.dashboard {
-
-    margin-top: 8px;
-}
-
-
-/* =====================================================
-   DASHBOARD HEADING
-   ===================================================== */
-
-.dashboard-heading {
-
-    margin-bottom: 18px;
-}
-
-
-.dashboard-label {
-
-    color: var(--gold);
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: 0.15em;
-
-    margin-bottom: 5px;
-}
-
-
-.dashboard-heading h2 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 24px;
-
-    font-weight: 500;
-
-    color: var(--brown-dark);
-}
-
-
-/* =====================================================
-   STAT GRID
-   ===================================================== */
-
-.stats-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 12px;
-
-    margin-bottom: 32px;
-}
-
-
-.stat-card {
-
-    background:
-        rgba(255, 255, 255, 0.85);
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius: 18px;
-
-    padding: 17px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-
-    min-height: 100px;
-
-    box-shadow:
-        0 7px 22px
-        rgba(68, 45, 35, 0.055);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.stat-card:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 11px 28px
-        rgba(68, 45, 35, 0.09);
-}
-
-
-/* =====================================================
-   STAT ICON
-   ===================================================== */
-
-.stat-icon {
-
-    width: 43px;
-    height: 43px;
-
-    flex-shrink: 0;
-
-    border-radius: 14px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #f5e8e4,
-            #f9f1ed
-        );
-
-    border:
-        1px solid
-        rgba(185, 154, 98, 0.12);
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    font-size: 21px;
-}
-
-
-/* =====================================================
-   STAT TEXT
-   ===================================================== */
-
-.stat-label {
-
-    color: #9a8980;
-
-    font-size: 9px;
-
-    font-weight: 800;
-
-    letter-spacing: 0.09em;
-
-    margin-bottom: 4px;
-}
-
-
-.stat-card h3 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 27px;
-
-    font-weight: 500;
-
-    line-height: 1;
-
-    color: var(--brown-dark);
-}
-
-
-/* =====================================================
-   QUICK ACTIONS
-   ===================================================== */
-
-.quick-heading {
-
-    margin-bottom: 13px;
-}
-
-
-.dashboard .menu {
-
-    gap: 13px;
-}
-
-
-.dashboard .menu-card {
-
-    border:
-        1px solid
-        rgba(232, 221, 212, 0.9);
-
-    border-radius: 18px;
-
-    padding: 18px;
-
-    box-shadow:
-        0 7px 22px
-        rgba(68, 45, 35, 0.05);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.dashboard .menu-card:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 11px 28px
-        rgba(68, 45, 35, 0.08);
-}
-
-
-.dashboard .menu-card .icon {
-
-    width: 45px;
-    height: 45px;
-
-    border-radius: 14px;
-
-    background:
-        #f4e9e5;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    font-size: 23px;
-}
-
-
-.dashboard .menu-card h2 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 20px;
-
-    font-weight: 500;
-
-    color: var(--brown-dark);
-}
-
-
-.dashboard .menu-card p {
-
-    color: var(--brown-light);
-
-    font-size: 13px;
-}
-
-
-.dashboard .arrow {
-
-    color: var(--gold);
-
-    font-size: 22px;
-}
-
-
-/* =====================================================
-   NEW ORDER ITEM PICKER
-   ===================================================== */
-
-.order-item-picker {
-
-    margin-bottom: 24px;
-}
-
-
-/* =====================================================
-   ITEM TYPE BUTTONS
-   ===================================================== */
-
-.item-type-buttons {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 10px;
-
-    margin-bottom: 14px;
-}
-
-
-.item-type-button {
-
-    appearance: none;
-    -webkit-appearance: none;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 9px;
-
-    width: 100%;
-
-    padding:
-        13px
-        14px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius: 14px;
-
-    background:
-        rgba(255, 255, 255, 0.82);
-
-    color: var(--brown);
-
-    font-family: inherit;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition:
-        border-color 0.2s ease,
-        background 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.item-type-button:hover {
-
-    transform: translateY(-1px);
-
-    border-color:
-        rgba(185, 154, 98, 0.50);
-
-    box-shadow:
-        0 5px 15px
-        rgba(65, 43, 34, 0.06);
-}
-
-
-.item-type-button.active {
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #f9e9e6,
-            #fff7f3
-        );
-
-    border-color:
-        var(--blush);
-
-    color:
-        var(--brown-dark);
-
-    box-shadow:
-        0 5px 15px
-        rgba(199, 157, 145, 0.14);
-}
-
-
-.item-type-button .type-emoji {
-
-    font-size: 20px;
-}
-
-
-/* =====================================================
-   INVENTORY PICKER AREA
-   ===================================================== */
-
-.inventory-picker {
-
-    display: none;
-
-    padding: 15px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius: 18px;
-
-    background:
-        rgba(255, 255, 255, 0.68);
-}
-
-
-.inventory-picker.visible {
-
-    display: block;
-}
-
-
-/* =====================================================
-   INVENTORY SEARCH
-   ===================================================== */
-
-.inventory-search-wrapper {
-
-    position: relative;
-
-    margin-bottom: 12px;
-}
-
-
-.inventory-search-icon {
-
-    position: absolute;
-
-    left: 14px;
-
-    top: 50%;
-
-    transform:
-        translateY(-50%);
-
-    font-size: 16px;
-
-    pointer-events: none;
-
-    color: var(--brown-light);
-}
-
-
-#inventory-search {
-
-    width: 100%;
-
-    padding:
-        13px
-        14px
-        13px
-        40px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius: 13px;
-
-    background:
-        var(--white);
-
-    color:
-        var(--brown-dark);
-
-    font-family: inherit;
-
-    font-size: 14px;
-
-    outline: none;
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-#inventory-search:focus {
-
-    border-color: var(--gold);
-
-    box-shadow:
-        0 0 0 4px
-        rgba(185, 154, 98, 0.11);
-}
-
-
-/* =====================================================
-   INVENTORY RESULT LIST
-   ===================================================== */
-
-.inventory-results {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 8px;
-
-    max-height: 280px;
-
-    overflow-y: auto;
-
-    padding-right: 2px;
-}
-
-
-.inventory-result {
-
-    width: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 10px;
-
-    border:
-        1px solid
-        transparent;
-
-    border-radius: 14px;
-
-    background:
-        rgba(255, 255, 255, 0.90);
-
-    color: var(--brown-dark);
-
-    text-align: left;
-
-    font-family: inherit;
-
-    cursor: pointer;
-
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.15s ease;
-}
-
-
-.inventory-result:hover {
-
-    transform: translateY(-1px);
-
-    background:
-        #fffaf7;
-
-    border-color:
-        var(--blush-light);
-}
-
-
-.inventory-result.selected {
-
-    background:
-        var(--blush-light);
-
-    border-color:
-        var(--blush);
-}
-
-
-/* =====================================================
-   INVENTORY RESULT PHOTO
-   ===================================================== */
-
-.inventory-result-photo {
-
-    width: 52px;
-    height: 52px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    border-radius: 11px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #eee3d8,
-            #f8f1ec
-        );
-
-    color: #aa9185;
-
-    font-size: 24px;
-}
-
-
-.inventory-result-photo img {
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-
-/* =====================================================
-   INVENTORY RESULT INFORMATION
-   ===================================================== */
-
-.inventory-result-info {
-
-    min-width: 0;
-
-    flex: 1;
-}
-
-
-.inventory-result-name {
-
-    display: block;
-
-    overflow: hidden;
-
-    color: var(--brown-dark);
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    white-space: nowrap;
-
-    text-overflow: ellipsis;
-}
-
-
-.inventory-result-meta {
-
-    display: block;
-
-    margin-top: 3px;
-
-    color: var(--brown-light);
-
-    font-size: 12px;
-}
-
-
-.inventory-result-stock {
-
-    flex-shrink: 0;
-
-    color: var(--green);
-
-    font-size: 11px;
-
-    font-weight: 800;
-}
-
-
-.inventory-result-stock.out {
-
-    color: var(--red);
-}
-
-
-/* =====================================================
-   NO INVENTORY RESULTS
-   ===================================================== */
-
-.inventory-no-results {
-
-    padding:
-        20px
-        10px;
-
-    text-align: center;
-
-    color: var(--brown-light);
-
-    font-size: 13px;
-
-    line-height: 1.5;
-}
-
-
-/* =====================================================
-   SELECTED ITEM LABEL
-   ===================================================== */
-
-.selected-item-label {
-
-    margin-top: 12px;
-
-    padding:
-        9px
-        11px;
-
-    border-radius: 12px;
-
-    background:
-        var(--green-light);
-
-    color: var(--green);
-
-    font-size: 12px;
-
-    font-weight: 800;
-}
-
-
-/* =====================================================
-   PRE-ORDER MANUAL ENTRY
-   ===================================================== */
-
-.preorder-entry {
-
-    display: none;
-
-    margin-top: 14px;
-
-    padding: 16px;
-
-    border:
-        1px solid
-        var(--border-gold);
-
-    border-radius: 18px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #fffaf3,
-            #fdf5e9
-        );
-
-    box-shadow:
-        0 5px 18px
-        rgba(130, 96, 50, 0.055);
-}
-
-
-.preorder-entry.visible {
-
-    display: block;
-}
-
-
-/* =====================================================
-   PRE-ORDER HEADING
-   ===================================================== */
-
-.preorder-entry-heading {
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 10px;
-
-    margin-bottom: 13px;
-}
-
-
-.preorder-entry-icon {
-
-    width: 38px;
-    height: 38px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    border-radius: 12px;
-
-    background:
-        var(--gold-pale);
-
-    font-size: 19px;
-}
-
-
-.preorder-entry-heading h3 {
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 18px;
-
-    font-weight: 500;
-
-    color: var(--brown-dark);
-
-    margin-bottom: 3px;
-}
-
-
-.preorder-entry-heading p {
-
-    color: var(--brown-light);
-
-    font-size: 12px;
-
-    line-height: 1.4;
-}
-
-
-/* =====================================================
-   PRE-ORDER FIELDS
-   ===================================================== */
-
-.preorder-fields {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr;
-
-    gap: 10px;
-}
-
-
-.preorder-fields input,
-.preorder-fields textarea {
-
-    width: 100%;
-
-    padding:
-        12px
-        13px;
-
-    border:
-        1px solid
-        #dfd0c4;
-
-    border-radius: 12px;
-
-    background:
-        rgba(255, 253, 251, 0.9);
-
-    color:
-        var(--brown-dark);
-
-    font-family: inherit;
-
-    font-size: 14px;
-
-    outline: none;
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.preorder-fields textarea {
-
-    min-height: 80px;
-
-    resize: vertical;
-}
-
-
-.preorder-fields input::placeholder,
-.preorder-fields textarea::placeholder {
-
-    color: #b3a39b;
-}
-
-
-.preorder-fields input:focus,
-.preorder-fields textarea:focus {
-
-    border-color: var(--gold);
-
-    box-shadow:
-        0 0 0 4px
-        rgba(185, 154, 98, 0.11);
-}
-
-
-/* =====================================================
-   PRE-ORDER INFO / NOTE
-   ===================================================== */
-
-.preorder-note {
-
-    margin-top: 10px;
-
-    padding:
-        9px
-        11px;
-
-    border-radius: 11px;
-
-    background:
-        rgba(244, 229, 207, 0.55);
-
-    color:
-        #8a6834;
-
-    font-size: 11px;
-
-    line-height: 1.45;
-}
-
-
-/* =====================================================
-   HIDDEN OLD BAG SELECT
-   ===================================================== */
-
-#bag {
-
-    display: none;
-}
-
-
-/* =====================================================
-   SCROLLBAR
-   ===================================================== */
-
-::-webkit-scrollbar {
-
-    width: 7px;
-}
-
-
-::-webkit-scrollbar-track {
-
-    background:
-        transparent;
-}
-
-
-::-webkit-scrollbar-thumb {
-
-    background:
-        #d8c8bd;
-
-    border-radius: 999px;
-}
-
-
-::-webkit-scrollbar-thumb:hover {
-
-    background:
-        var(--gold);
-}
-
-
-/* =====================================================
-   MOBILE
-   ===================================================== */
-
-@media (max-width: 480px) {
-
-    .app {
-
-        padding:
-            18px
-            14px
-            55px;
-    }
-
-
-    .header {
-
-        padding-top: 27px;
-
-        padding-bottom: 35px;
-    }
-
-
-    .logo {
-
-        font-size: 50px;
-    }
-
-
-    .header h1 {
-
-        font-size: 32px;
-    }
-
-
-    .header p {
-
-        font-size: 13px;
-    }
-
-
-    .page-header h1 {
-
-        font-size: 29px;
-    }
-
-
-    .bag-photo-placeholder,
-    .order-bag-photo,
-    .order-bag-photo-placeholder {
-
-        height: 220px;
-    }
-
-
-    .item-type-buttons {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-
-    .item-type-button {
-
-        padding:
-            12px
-            10px;
-
-        font-size: 13px;
-    }
-
-
-    .inventory-picker {
-
-        padding: 12px;
-    }
-
-
-    .inventory-results {
-
-        max-height: 250px;
-    }
-
-
-    .inventory-result-photo {
-
-        width: 46px;
-        height: 46px;
-    }
-
-
-    .preorder-entry {
-
-        padding: 14px;
-    }
-}
-
-
-/* =====================================================
-   SMALL SCREENS
-   ===================================================== */
-
-@media (max-width: 380px) {
-
-    .header h1 {
-
-        font-size: 29px;
-    }
-
-
-    .stats-grid {
-
-        gap: 9px;
-    }
-
-
-    .stat-card {
-
-        padding: 13px;
-
-        gap: 9px;
-    }
-
-
-    .stat-icon {
-
-        width: 38px;
-        height: 38px;
-
-        font-size: 18px;
-    }
-
-
-    .stat-card h3 {
-
-        font-size: 24px;
-    }
-
-
-    .stat-label {
-
-        font-size: 8px;
-    }
-
-
-    .item-type-button {
-
-        gap: 6px;
-
-        padding:
-            11px
-            8px;
-
-        font-size: 12px;
-    }
-
-
-    .item-type-button .type-emoji {
-
-        font-size: 18px;
-    }
-}
-
-
-/* =====================================================
-   LARGER SCREENS
-   ===================================================== */
-
-@media (min-width: 700px) {
-
-    .app {
-
-        padding-top: 45px;
-    }
-}
-
-
-/* =====================================================
-   ORDER TYPE BUTTONS
-   ===================================================== */
-
-.order-type-buttons {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 12px;
-
-    margin-top: 10px;
-}
-
-
-.order-type-button {
-
-    appearance: none;
-    -webkit-appearance: none;
-
-    width: 100%;
-
-    min-height: 68px;
-
-    padding:
-        14px
-        12px;
-
-    border:
-        2px solid
-        #eadfe5;
-
-    border-radius: 18px;
-
-    background:
-        rgba(255, 255, 255, 0.90);
-
-    color:
-        #3b3036;
-
-    font-family: inherit;
-
-    font-size: 15px;
-
-    font-weight: 700;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 6px;
-
-    cursor: pointer;
-
-    transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        color 0.2s ease,
-        transform 0.15s ease,
-        box-shadow 0.2s ease;
-}
-
-
-.order-type-button:hover {
-
-    border-color:
-        var(--gold);
-
-    background:
-        #fffaf5;
-
-    transform:
-        translateY(-1px);
-}
-
-
-.order-type-button:active {
-
-    transform:
-        scale(0.98);
-}
-
-
-.order-type-button.active {
-
-    border-color:
-        var(--gold);
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #fbf2e4,
-            #fffaf3
-        );
-
-    color:
-        #866b3c;
-
-    box-shadow:
-        var(--gold-shadow);
-}
-
-
-.order-type-button .type-emoji {
-
-    font-size: 25px;
-
-    line-height: 1;
-}
-
-
-.order-type-button span:last-child {
-
-    line-height: 1.1;
-}
-
-
-/* =====================================================
-   ORDER TYPE MOBILE
-   ===================================================== */
-
-@media (max-width: 480px) {
-
-    .order-type-buttons {
-
-        gap: 10px;
-    }
-
-
-    .order-type-button {
-
-        min-height: 64px;
-
-        border-radius: 16px;
-
-        padding:
-            12px
-            8px;
-    }
-}
-
-
-/* =====================================================
-   ACCESSIBILITY
-   ===================================================== */
-
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-
-    outline:
-        2px solid
-        var(--gold);
-
-    outline-offset: 3px;
-}
-
-
-/* =====================================================
-   REDUCED MOTION
-   ===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-
-        animation-duration: 0.01ms !important;
-
-        animation-iteration-count: 1 !important;
-
-        transition-duration: 0.01ms !important;
-    }
-}/* =========================================================
-   MY RULE, MY WORLD
-   PINTEREST LUXURY FLORAL EDITORIAL THEME
+   Feminine • Floral • Minimal • Soft Luxury
    ========================================================= */
 
 :root {
-    --ivory: #fbf7f2;
+    --ivory: #fbf7f3;
     --paper: #f8f1eb;
     --cream: #f3e7df;
     --cream-dark: #e6d4ca;
-
     --white: #fffdfb;
 
     --brown-dark: #302326;
@@ -2805,6 +27,9 @@ textarea:focus-visible {
     --sage: #7d8b78;
     --sage-light: #e7ece4;
 
+    --red: #a9534d;
+    --red-light: #f7e5e2;
+
     --border: rgba(108, 72, 78, 0.14);
 
     --shadow:
@@ -2816,11 +41,17 @@ textarea:focus-visible {
 
 
 /* =========================================================
-   BASE
+   RESET
    ========================================================= */
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 html {
-    background: #f8f1eb;
+    background: var(--paper);
 }
 
 body {
@@ -2830,50 +61,42 @@ body {
 
     color: var(--brown-dark);
 
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
     background:
         radial-gradient(
-            circle at 50% 25%,
-            rgba(255,255,255,0.92) 0,
-            rgba(255,255,255,0.42) 25%,
-            transparent 55%
+            circle at 50% 20%,
+            rgba(255, 255, 255, 0.95),
+            transparent 50%
         ),
         linear-gradient(
             135deg,
             #fbf7f3 0%,
-            #f8eee9 48%,
+            #f8eee9 50%,
             #f3e7e1 100%
         );
 
     background-attachment: fixed;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 
 /* =========================================================
-   PAPER / FILM GRAIN
-   ========================================================= */
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-
-    opacity: 0.18;
-
-    background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
-
-    mix-blend-mode: multiply;
-}
-
-
-/* =========================================================
-   BOTANICAL CORNER ART
+   SUBTLE BOTANICAL CORNER
    ========================================================= */
 
 body::before {
     content: "";
+
     position: fixed;
     z-index: -1;
     pointer-events: none;
@@ -2884,7 +107,7 @@ body::before {
     top: -55px;
     left: -85px;
 
-    opacity: 0.72;
+    opacity: 0.68;
 
     background-image:
         url("data:image/svg+xml,%3Csvg width='430' height='520' viewBox='0 0 430 520' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23966d76' stroke-width='1.2' opacity='.58'%3E%3Cpath d='M35 490 C80 370 90 230 205 55'/%3E%3Cpath d='M72 402 C38 365 25 325 29 280'/%3E%3Cpath d='M91 345 C135 317 151 278 151 236'/%3E%3Cpath d='M112 287 C72 256 66 219 73 180'/%3E%3Cpath d='M151 220 C191 192 208 151 210 112'/%3E%3C/g%3E%3Cg fill='%23d39aa5' opacity='.42'%3E%3Cellipse cx='30' cy='275' rx='15' ry='34' transform='rotate(-38 30 275)'/%3E%3Cellipse cx='48' cy='304' rx='13' ry='31' transform='rotate(43 48 304)'/%3E%3Cellipse cx='70' cy='180' rx='14' ry='33' transform='rotate(-35 70 180)'/%3E%3Cellipse cx='91' cy='205' rx='13' ry='31' transform='rotate(45 91 205)'/%3E%3Cellipse cx='151' cy='236' rx='14' ry='33' transform='rotate(-42 151 236)'/%3E%3Cellipse cx='170' cy='255' rx='12' ry='29' transform='rotate(42 170 255)'/%3E%3C/g%3E%3Cg fill='%23c48b98' opacity='.34'%3E%3Ccircle cx='210' cy='108' r='19'/%3E%3Ccircle cx='225' cy='93' r='16'/%3E%3Ccircle cx='195' cy='91' r='16'/%3E%3Ccircle cx='210' cy='78' r='13'/%3E%3C/g%3E%3Cg fill='%23b99a63' opacity='.6'%3E%3Ccircle cx='210' cy='92' r='5'/%3E%3C/g%3E%3C/svg%3E");
@@ -2902,21 +125,37 @@ body::before {
 
 .app {
     position: relative;
+
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding:
+        24px
+        18px
+        70px;
 }
 
 
 /* =========================================================
-   LUXURY HEADER
+   HOME HEADER
    ========================================================= */
 
 .header {
     position: relative;
-    padding-top: 58px;
-    padding-bottom: 52px;
+
+    text-align: center;
+
+    padding:
+        58px
+        10px
+        52px;
 }
 
 
-/* tiny decorative ornament */
+/* Floral ornament */
+
 .header::before {
     content: "✦  ❀  ✦";
 
@@ -2928,18 +167,24 @@ body::before {
 
     font-family: Georgia, serif;
     font-size: 12px;
+
     letter-spacing: 9px;
 
     opacity: 0.78;
 }
 
 
-/* elegant divider */
+/* Elegant divider */
+
 .header::after {
+    content: "";
+
+    display: block;
+
     width: 105px;
     height: 1px;
 
-    margin-top: 25px;
+    margin: 25px auto 0;
 
     background:
         linear-gradient(
@@ -2959,11 +204,6 @@ body::before {
    LOGO
    ========================================================= */
 
-/*
-   Replaces the unreliable bag emoji with a
-   proper luxury botanical emblem.
-*/
-
 .logo {
     width: 74px;
     height: 74px;
@@ -2976,7 +216,10 @@ body::before {
 
     font-size: 0;
 
-    border: 1px solid rgba(185,154,99,0.45);
+    border:
+        1px solid
+        rgba(185, 154, 99, 0.45);
+
     border-radius: 50%;
 
     background:
@@ -2988,44 +231,64 @@ body::before {
         );
 
     box-shadow:
-        0 10px 30px rgba(104,64,73,0.12),
+        0 10px 30px rgba(104, 64, 73, 0.12),
         inset 0 0 0 5px rgba(255,255,255,0.45);
 
-    animation: softFloat 5s ease-in-out infinite;
+    animation:
+        softFloat 5s ease-in-out infinite;
 }
 
-
-/* floral logo */
 .logo::before {
     content: "✿";
 
     font-family: Georgia, serif;
     font-size: 43px;
-    line-height: 1;
 
     color: var(--burgundy);
 
     text-shadow:
-        0 3px 10px rgba(99,63,73,0.12);
+        0 3px 10px rgba(99, 63, 73, 0.12);
+}
+
+@keyframes softFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
 }
 
 
 /* =========================================================
-   TITLE
+   HEADINGS
    ========================================================= */
 
-.header h1 {
+.header h1,
+.page-header h1,
+.menu-card h2,
+.order-information h2,
+.bag-information h2,
+.selected-bag-details h3,
+.empty-orders h2,
+.dashboard-heading h2 {
     font-family:
         "Bodoni 72",
         "Didot",
         "Baskerville",
         Georgia,
+        "Times New Roman",
         serif;
 
-    font-size: 42px;
     font-weight: 400;
+    letter-spacing: -0.035em;
+}
 
-    letter-spacing: -0.055em;
+.header h1 {
+    font-size: 42px;
+    line-height: 1.15;
 
     color: #352629;
 
@@ -3033,38 +296,73 @@ body::before {
         0 1px 0 rgba(255,255,255,0.8);
 }
 
-
 .header p {
     color: #9a777d;
 
     font-family:
-        "Baskerville",
+        Baskerville,
         Georgia,
         serif;
 
     font-size: 14px;
-
     letter-spacing: 0.13em;
-
     text-transform: uppercase;
 }
 
 
 /* =========================================================
-   SECTION HEADINGS
+   PAGE HEADERS
    ========================================================= */
 
-.dashboard-label,
-.stat-label,
-.quick-heading {
-    color: var(--gold);
+.page-header {
+    padding:
+        8px
+        2px
+        25px;
+}
 
-    letter-spacing: 0.18em;
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    color: var(--brown);
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.back-button:hover {
+    color: var(--rose-dark);
+    transform: translateX(-2px);
+}
+
+.page-header h1 {
+    margin:
+        18px
+        0
+        7px;
+
+    font-size: 32px;
+    line-height: 1.2;
+
+    color: var(--brown-dark);
+}
+
+.page-header p {
+    color: var(--brown-light);
+    font-size: 14px;
 }
 
 
 /* =========================================================
-   GLASS / PAPER CARDS
+   CARDS
    ========================================================= */
 
 .menu-card,
@@ -3080,8 +378,8 @@ body::before {
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,0.92),
-            rgba(255,248,246,0.80)
+            rgba(255,255,255,0.94),
+            rgba(255,248,246,0.82)
         );
 
     box-shadow: var(--shadow);
@@ -3091,27 +389,55 @@ body::before {
 }
 
 
-.menu-card:hover,
-.order-card:hover,
-.bag-card:hover,
-.stat-card:hover {
-    border-color:
-        rgba(185,154,99,0.35);
-
-    box-shadow:
-        var(--shadow-hover);
-}
-
-
 /* =========================================================
-   GOLD EDGE DETAIL
+   HOME MENU
    ========================================================= */
 
-.menu-card::before {
-    width: 3px;
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
+.menu-card {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 20px;
+
+    border-radius: 21px;
+
+    color: inherit;
+    text-decoration: none;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.menu-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
     top: 22px;
     bottom: 22px;
+
+    width: 3px;
+
+    border-radius: 999px;
 
     background:
         linear-gradient(
@@ -3122,7 +448,28 @@ body::before {
             transparent
         );
 
-    border-radius: 999px;
+    opacity: 0;
+
+    transition:
+        opacity 0.22s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(185,154,99,0.35);
+
+    box-shadow:
+        var(--shadow-hover);
+}
+
+.menu-card:hover::before {
+    opacity: 0.8;
+}
+
+.menu-card:active {
+    transform: scale(0.985);
 }
 
 
@@ -3133,6 +480,12 @@ body::before {
 .icon,
 .stat-icon,
 .dashboard .menu-card .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
     background:
         linear-gradient(
             145deg,
@@ -3149,27 +502,125 @@ body::before {
         0 7px 18px rgba(119,72,82,0.07);
 }
 
+.icon {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 17px;
+
+    font-size: 27px;
+}
+
+.menu-card h2 {
+    font-size: 20px;
+    line-height: 1.2;
+
+    margin-bottom: 5px;
+
+    color: var(--brown-dark);
+}
+
+.menu-card p {
+    color: var(--brown-light);
+
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.arrow {
+    margin-left: auto;
+
+    color: var(--gold);
+
+    font-size: 23px;
+
+    transition:
+        transform 0.22s ease,
+        color 0.22s ease;
+}
+
+.menu-card:hover .arrow {
+    transform: translateX(4px);
+    color: var(--rose-dark);
+}
+
 
 /* =========================================================
-   TYPOGRAPHY
+   FORMS
    ========================================================= */
 
-.menu-card h2,
-.order-information h2,
-.bag-information h2,
-.selected-bag-details h3,
-.empty-orders h2,
-.dashboard-heading h2 {
-    font-family:
-        "Bodoni 72",
-        "Didot",
-        "Baskerville",
-        Georgia,
-        serif;
+.form-group {
+    margin-bottom: 20px;
+}
 
-    font-weight: 400;
+.form-group label {
+    display: block;
 
-    letter-spacing: -0.035em;
+    margin-bottom: 8px;
+
+    color: var(--rose-dark);
+
+    font-size: 11px;
+    font-weight: 750;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    border:
+        1px solid
+        rgba(126,88,95,0.17);
+
+    border-radius: 14px;
+
+    padding:
+        14px
+        15px;
+
+    background:
+        rgba(255,253,251,0.88);
+
+    color: var(--brown-dark);
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.8);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.form-group textarea {
+    min-height: 105px;
+    resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #b3a39b;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--rose);
+
+    box-shadow:
+        0 0 0 4px rgba(201,143,155,0.12),
+        0 8px 20px rgba(91,54,63,0.05);
+
+    transform: translateY(-1px);
 }
 
 
@@ -3180,8 +631,19 @@ body::before {
 .save-order-button,
 .add-order-button {
     position: relative;
-
     overflow: hidden;
+
+    width: 100%;
+
+    display: block;
+
+    padding: 16px;
+
+    border:
+        1px solid
+        rgba(185,154,99,0.32);
+
+    border-radius: 15px;
 
     background:
         linear-gradient(
@@ -3190,16 +652,27 @@ body::before {
             #402d33
         );
 
-    border:
-        1px solid
-        rgba(185,154,99,0.32);
+    color: white;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+
+    letter-spacing: 0.07em;
+
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
 
     box-shadow:
         0 12px 28px rgba(70,42,50,0.22);
 
-    letter-spacing: 0.07em;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
 }
-
 
 .save-order-button::after,
 .add-order-button::after {
@@ -3223,103 +696,74 @@ body::before {
 
     transform: skewX(-20deg);
 
-    transition: left 0.6s ease;
+    transition:
+        left 0.6s ease;
 }
 
+.save-order-button:hover,
+.add-order-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 32px rgba(70,42,50,0.25);
+}
 
 .save-order-button:hover::after,
 .add-order-button:hover::after {
     left: 140%;
 }
 
+.save-order-button:active,
+.add-order-button:active {
+    transform: scale(0.985);
+}
+
+.save-order-button:disabled,
+.add-order-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
 
 /* =========================================================
-   FORM FIELDS
+   INVENTORY
    ========================================================= */
 
-.form-group label {
-    color: var(--rose-dark);
-    letter-spacing: 0.12em;
+.inventory-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    margin-top: 18px;
 }
 
+.bag-card {
+    overflow: hidden;
 
-.form-group input,
-.form-group select,
-.form-group textarea,
-#inventory-search {
-    border-color:
-        rgba(126,88,95,0.17);
+    border-radius: 23px;
 
-    background:
-        rgba(255,253,251,0.82);
+    padding: 11px;
 
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.8);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
 }
 
+.bag-card:hover {
+    transform: translateY(-3px);
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus,
-#inventory-search:focus {
     border-color:
-        var(--rose);
+        rgba(185,154,99,0.35);
 
     box-shadow:
-        0 0 0 4px
-        rgba(201,143,155,0.12),
-        0 8px 20px
-        rgba(91,54,63,0.05);
+        var(--shadow-hover);
 }
 
 
 /* =========================================================
-   ORDER TYPE / ITEM BUTTONS
-   ========================================================= */
-
-.order-type-button,
-.item-type-button {
-    border-color:
-        rgba(126,88,95,0.16);
-
-    background:
-        rgba(255,253,251,0.84);
-}
-
-
-.order-type-button:hover,
-.item-type-button:hover {
-    border-color:
-        rgba(201,143,155,0.5);
-
-    background:
-        #fff8f7;
-}
-
-
-.order-type-button.active,
-.item-type-button.active {
-    border-color:
-        var(--rose);
-
-    background:
-        linear-gradient(
-            135deg,
-            #f5e0e3,
-            #fff8f5
-        );
-
-    color:
-        var(--burgundy);
-
-    box-shadow:
-        0 9px 25px
-        rgba(166,104,118,0.13);
-}
-
-
-/* =========================================================
-   PRODUCT / BAG PHOTOS
+   INVENTORY PHOTOS
    ========================================================= */
 
 .bag-photo-placeholder,
@@ -3336,28 +780,947 @@ body::before {
     color: var(--rose-dark);
 }
 
+.bag-photo-placeholder {
+    width: 100%;
+    height: 260px;
 
-/* =========================================================
-   STOCK
-   ========================================================= */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.bag-stock,
-.selected-item-label {
-    background:
-        var(--sage-light);
+    overflow: hidden;
 
-    color:
-        #63735f;
+    border-radius: 17px;
+
+    font-size: 55px;
+}
+
+.bag-photo-placeholder img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.35s ease;
+}
+
+.bag-card:hover .bag-photo-placeholder img {
+    transform: scale(1.025);
 }
 
 
 /* =========================================================
-   PREORDER
+   INVENTORY INFORMATION
+   ========================================================= */
+
+.bag-information {
+    padding:
+        17px
+        6px
+        5px;
+}
+
+.bag-information h2 {
+    font-size: 24px;
+
+    margin-bottom: 6px;
+
+    color: var(--brown-dark);
+}
+
+.bag-name {
+    color: var(--brown-light);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 11px;
+}
+
+.bag-description {
+    color: #71635c;
+
+    font-size: 14px;
+    line-height: 1.55;
+
+    margin-bottom: 13px;
+}
+
+.bag-price {
+    color: var(--brown);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    margin-bottom: 9px;
+}
+
+.bag-stock {
+    display: inline-block;
+
+    padding:
+        6px
+        10px;
+
+    border-radius: 999px;
+
+    background: var(--sage-light);
+
+    color: #63735f;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BAG ACTIONS
+   ========================================================= */
+
+.bag-actions {
+    display: flex;
+    gap: 10px;
+
+    margin-top: 17px;
+}
+
+.bag-actions button {
+    flex: 1;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.bag-actions button:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+.edit-bag-button {
+    background: var(--rose-light);
+    color: var(--burgundy);
+}
+
+.delete-bag-button {
+    background: var(--red-light);
+    color: var(--red);
+}
+
+
+/* =========================================================
+   ORDERS
+   ========================================================= */
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    margin-top: 18px;
+}
+
+.order-card {
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.order-bag-photo,
+.order-bag-photo-placeholder {
+    width: 100%;
+    height: 235px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.order-bag-photo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+}
+
+.order-information {
+    padding:
+        18px
+        18px
+        10px;
+}
+
+.order-information h2 {
+    font-size: 23px;
+
+    margin-bottom: 10px;
+}
+
+.order-information p {
+    color: #71635c;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    margin-bottom: 6px;
+}
+
+.order-bag {
+    color: var(--burgundy) !important;
+    font-weight: 700;
+}
+
+.order-date {
+    color: #a08d84 !important;
+
+    font-size: 12px !important;
+
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   ORDER COMPLETION
+   ========================================================= */
+
+.order-complete {
+    margin-top: 6px;
+
+    padding:
+        14px
+        18px
+        17px;
+
+    border-top:
+        1px solid
+        var(--border);
+}
+
+.order-complete label {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--brown);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.order-checkbox {
+    width: 22px;
+    height: 22px;
+
+    margin: 0;
+
+    accent-color: var(--rose);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   PRE-ORDER
+   ========================================================= */
+
+.preorder-badge {
+    display: inline-flex;
+    align-items: center;
+
+    width: fit-content;
+
+    padding:
+        5px
+        9px;
+
+    margin:
+        5px
+        0
+        8px;
+
+    border:
+        1px solid
+        rgba(185,154,99,0.28);
+
+    border-radius: 999px;
+
+    background: var(--gold-pale);
+
+    color: #866a3d;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.order-card.preorder {
+    border-color:
+        rgba(185,154,99,0.35);
+}
+
+.order-card.preorder .order-information {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(250,243,230,0.40),
+            transparent
+        );
+}
+
+.order-card.preorder .order-bag {
+    color: #866a3d !important;
+}
+
+
+/* =========================================================
+   SELECTED BAG PREVIEW
+   ========================================================= */
+
+.selected-bag-preview {
+    margin-top: 16px;
+
+    overflow: hidden;
+
+    border-radius: 21px;
+}
+
+.selected-bag-preview img {
+    width: 100%;
+    height: 230px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.selected-bag-details {
+    padding: 17px;
+}
+
+.selected-bag-details h3 {
+    font-size: 21px;
+
+    margin-bottom: 5px;
+}
+
+.selected-bag-details p {
+    color: var(--brown-light);
+
+    font-size: 14px;
+
+    margin-top: 5px;
+}
+
+.selected-bag-stock {
+    color: var(--sage) !important;
+    font-weight: 700;
+
+    margin-top: 12px !important;
+}
+
+.no-photo-preview {
+    height: 190px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+}
+
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+.dashboard {
+    margin-top: 8px;
+}
+
+.dashboard-heading {
+    margin-bottom: 18px;
+}
+
+.dashboard-label,
+.stat-label,
+.quick-heading {
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+.dashboard-heading h2 {
+    font-size: 24px;
+    margin-top: 4px;
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 32px;
+}
+
+.stat-card {
+    min-height: 100px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 17px;
+
+    border-radius: 18px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 32px
+        rgba(68,45,35,0.09);
+}
+
+.stat-icon {
+    width: 43px;
+    height: 43px;
+
+    border-radius: 14px;
+
+    font-size: 21px;
+}
+
+.stat-label {
+    color: #9a8980;
+
+    font-size: 9px;
+
+    margin-bottom: 4px;
+}
+
+.stat-card h3 {
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 27px;
+    font-weight: 500;
+
+    line-height: 1;
+
+    color: var(--brown-dark);
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.quick-heading {
+    margin-bottom: 13px;
+}
+
+.dashboard .menu {
+    gap: 13px;
+}
+
+.dashboard .menu-card {
+    border-radius: 18px;
+
+    padding: 18px;
+}
+
+.dashboard .menu-card .icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 14px;
+
+    font-size: 23px;
+}
+
+.dashboard .menu-card h2 {
+    font-size: 20px;
+}
+
+.dashboard .menu-card p {
+    color: var(--brown-light);
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ORDER / ITEM TYPE BUTTONS
+   ========================================================= */
+
+.order-type-buttons,
+.item-type-buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-top: 10px;
+}
+
+.item-type-buttons {
+    margin-bottom: 14px;
+}
+
+.order-type-button,
+.item-type-button {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 100%;
+
+    border:
+        1px solid
+        rgba(126,88,95,0.16);
+
+    border-radius: 17px;
+
+    background:
+        rgba(255,253,251,0.88);
+
+    color: var(--brown);
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+.order-type-button {
+    min-height: 68px;
+
+    padding:
+        14px
+        12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+}
+
+.item-type-button {
+    padding:
+        13px
+        14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+}
+
+.order-type-button:hover,
+.item-type-button:hover {
+    transform: translateY(-1px);
+
+    border-color:
+        rgba(201,143,155,0.5);
+
+    background: #fff8f7;
+
+    box-shadow:
+        0 7px 18px
+        rgba(119,72,82,0.07);
+}
+
+.order-type-button:active,
+.item-type-button:active {
+    transform: scale(0.98);
+}
+
+.order-type-button.active,
+.item-type-button.active {
+    border-color: var(--rose);
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5e0e3,
+            #fff8f5
+        );
+
+    color: var(--burgundy);
+
+    box-shadow:
+        0 9px 25px
+        rgba(166,104,118,0.13);
+}
+
+.order-type-button .type-emoji,
+.item-type-button .type-emoji {
+    font-size: 24px;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   INVENTORY PICKER
+   ========================================================= */
+
+.inventory-picker {
+    display: none;
+
+    padding: 15px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.70);
+}
+
+.inventory-picker.visible {
+    display: block;
+}
+
+
+/* =========================================================
+   INVENTORY PAGE SEARCH — SCREENSHOT STYLE
+   ========================================================= */
+
+.inventory-page-search {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Decorative search icon + placeholder text */
+.inventory-page-search::before {
+    content: "🔍";
+    position: absolute;
+    left: 5px;
+    top: -28px;
+    z-index: 2;
+
+    font-size: 18px;
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+.inventory-page-search::after {
+    content: "Search your inventory...";
+    position: absolute;
+    left: 29px;
+    top: 50%;
+    z-index: 2;
+
+    transform: translateY(-50%);
+
+    color: #b5a39b;
+    font-size: 16px;
+
+    pointer-events: none;
+}
+
+/* Actual input */
+#inventory-page-search {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+    height: 59px;
+
+    padding: 0 18px;
+
+    border: 1px solid #e3cfc1;
+    border-radius: 16px;
+
+    background: #fffdf9;
+
+    color: #514542;
+
+    font-family: inherit;
+    font-size: 16px;
+
+    outline: none;
+
+    box-shadow:
+        0 5px 18px rgba(90, 70, 60, 0.06);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#inventory-page-search::placeholder {
+    color: transparent;
+    opacity: 0;
+}
+
+#inventory-page-search:hover {
+    border-color: #d7bfb2;
+}
+
+#inventory-page-search:focus {
+    border-color: #d3aaa0;
+
+    box-shadow:
+        0 5px 18px rgba(90, 70, 60, 0.07),
+        0 0 0 3px rgba(211, 170, 160, 0.08);
+}
+
+#inventory-page-search:focus + * {
+    pointer-events: none;
+}
+
+.inventory-page-search:focus-within::after {
+    display: none;
+}
+
+/* =========================================================
+   INVENTORY RESULTS
+   ========================================================= */
+
+.inventory-results {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    max-height: 280px;
+
+    overflow-y: auto;
+
+    padding-right: 2px;
+}
+
+.inventory-result {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,0.90);
+
+    color: var(--brown-dark);
+
+    text-align: left;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.inventory-result:hover {
+    transform: translateY(-1px);
+
+    background: #fffaf7;
+
+    border-color:
+        var(--rose-light);
+}
+
+.inventory-result.selected {
+    background: var(--rose-light);
+
+    border-color:
+        var(--rose);
+}
+
+.inventory-result-photo {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 11px;
+
+    font-size: 24px;
+}
+
+.inventory-result-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.inventory-result-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.inventory-result-name {
+    display: block;
+
+    overflow: hidden;
+
+    color: var(--brown-dark);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.inventory-result-meta {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--brown-light);
+
+    font-size: 12px;
+}
+
+.inventory-result-stock {
+    flex-shrink: 0;
+
+    color: var(--sage);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.inventory-result-stock.out {
+    color: var(--red);
+}
+
+.inventory-no-results {
+    padding:
+        20px
+        10px;
+
+    text-align: center;
+
+    color: var(--brown-light);
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.selected-item-label {
+    margin-top: 12px;
+
+    padding:
+        9px
+        11px;
+
+    border-radius: 12px;
+
+    background: var(--sage-light);
+
+    color: #63735f;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   PRE-ORDER ENTRY
    ========================================================= */
 
 .preorder-entry {
-    border-color:
+    display: none;
+
+    margin-top: 14px;
+
+    padding: 16px;
+
+    border:
+        1px solid
         rgba(185,154,99,0.35);
+
+    border-radius: 18px;
 
     background:
         linear-gradient(
@@ -3365,39 +1728,154 @@ body::before {
             #fffaf2,
             #f8e9e8
         );
+
+    box-shadow:
+        0 5px 18px
+        rgba(130,96,50,0.055);
 }
 
+.preorder-entry.visible {
+    display: block;
+}
 
-.preorder-badge {
+.preorder-entry-heading {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-bottom: 13px;
+}
+
+.preorder-entry-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: var(--gold-pale);
+
+    font-size: 19px;
+}
+
+.preorder-entry-heading h3 {
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    color: var(--brown-dark);
+
+    margin-bottom: 3px;
+}
+
+.preorder-entry-heading p {
+    color: var(--brown-light);
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.preorder-fields {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+}
+
+.preorder-fields input,
+.preorder-fields textarea {
+    width: 100%;
+
+    padding:
+        12px
+        13px;
+
+    border:
+        1px solid
+        #dfd0c4;
+
+    border-radius: 12px;
+
     background:
-        var(--gold-pale);
+        rgba(255,253,251,0.9);
 
-    color:
-        #866a3d;
+    color: var(--brown-dark);
 
-    border-color:
-        rgba(185,154,99,0.28);
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.preorder-fields textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.preorder-fields input:focus,
+.preorder-fields textarea:focus {
+    border-color: var(--rose);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(201,143,155,0.10);
+}
+
+.preorder-note {
+    margin-top: 10px;
+
+    padding:
+        9px
+        11px;
+
+    border-radius: 11px;
+
+    background:
+        rgba(244,229,207,0.55);
+
+    color: #8a6834;
+
+    font-size: 11px;
+    line-height: 1.45;
 }
 
 
 /* =========================================================
-   COMPLETED ORDERS
+   EMPTY STATES
    ========================================================= */
 
-.order-card.completed {
-    background:
-        rgba(244,237,235,0.82);
+.empty-orders {
+    padding:
+        48px
+        22px;
 
-    opacity: 0.60;
+    margin-top: 15px;
+
+    text-align: center;
+
+    border-radius: 23px;
 }
-
-
-/* =========================================================
-   EMPTY STATE
-   ========================================================= */
 
 .empty-icon {
     color: var(--rose);
+
+    font-size: 52px;
+
+    margin-bottom: 13px;
 
     filter:
         drop-shadow(
@@ -3406,14 +1884,73 @@ body::before {
         );
 }
 
+.empty-orders h2 {
+    font-size: 22px;
+
+    margin-bottom: 8px;
+}
+
+.empty-orders p {
+    color: var(--brown-light);
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
 
 /* =========================================================
-   ARROWS
+   PHOTO HELP
    ========================================================= */
 
-.arrow {
-    color:
-        var(--gold);
+.photo-help {
+    margin-top: 7px;
+
+    color: #9c8a81;
+
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   COMPLETED ORDERS
+   ========================================================= */
+
+.order-card.completed {
+    opacity: 0.60;
+
+    background:
+        rgba(244,237,235,0.82);
+}
+
+.order-card.completed h2 {
+    text-decoration: line-through;
+}
+
+
+/* =========================================================
+   HIDDEN OLD SELECT
+   ========================================================= */
+
+#bag {
+    display: none;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline:
+        2px solid
+        var(--rose-dark);
+
+    outline-offset: 3px;
 }
 
 
@@ -3423,6 +1960,10 @@ body::before {
 
 ::-webkit-scrollbar {
     width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -3436,12 +1977,23 @@ body::before {
     border-radius: 999px;
 }
 
+::-webkit-scrollbar-thumb:hover {
+    background: var(--rose-dark);
+}
+
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
 @media (max-width: 480px) {
+
+    .app {
+        padding:
+            18px
+            14px
+            55px;
+    }
 
     body::before {
         width: 290px;
@@ -3450,15 +2002,14 @@ body::before {
         left: -100px;
         top: -35px;
 
-        opacity: 0.55;
+        opacity: 0.52;
     }
 
     .header {
-        padding-top: 40px;
-    }
-
-    .header h1 {
-        font-size: 34px;
+        padding:
+            40px
+            8px
+            38px;
     }
 
     .logo {
@@ -3469,6 +2020,125 @@ body::before {
     .logo::before {
         font-size: 38px;
     }
+
+    .header h1 {
+        font-size: 34px;
+    }
+
+    .header p {
+        font-size: 13px;
+    }
+
+    .page-header h1 {
+        font-size: 29px;
+    }
+
+    .bag-photo-placeholder,
+    .order-bag-photo,
+    .order-bag-photo-placeholder {
+        height: 220px;
+    }
+
+    .order-type-buttons,
+    .item-type-buttons {
+        gap: 10px;
+    }
+
+    .order-type-button {
+        min-height: 64px;
+
+        border-radius: 16px;
+
+        padding:
+            12px
+            8px;
+    }
+
+    .item-type-button {
+        padding:
+            12px
+            10px;
+
+        font-size: 13px;
+    }
+
+    .inventory-picker {
+        padding: 12px;
+    }
+
+    .inventory-results {
+        max-height: 250px;
+    }
+
+    .inventory-result-photo {
+        width: 46px;
+        height: 46px;
+    }
+
+    .preorder-entry {
+        padding: 14px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .header h1 {
+        font-size: 29px;
+    }
+
+    .stats-grid {
+        gap: 9px;
+    }
+
+    .stat-card {
+        padding: 13px;
+        gap: 9px;
+    }
+
+    .stat-icon {
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+    }
+
+    .stat-card h3 {
+        font-size: 24px;
+    }
+
+    .stat-label {
+        font-size: 8px;
+    }
+
+    .item-type-button {
+        gap: 6px;
+
+        padding:
+            11px
+            8px;
+
+        font-size: 12px;
+    }
+
+    .item-type-button .type-emoji {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   LARGER SCREENS
+   ========================================================= */
+
+@media (min-width: 700px) {
+    .app {
+        padding-top: 45px;
+    }
 }
 
 
@@ -3477,7 +2147,772 @@ body::before {
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
     .logo {
         animation: none;
     }
 }
+/* =========================================================
+   🌸 BOTANICAL GARDEN THEME
+   VISUAL OVERRIDE ONLY
+   Functionality/layout selectors remain unchanged
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   COLOUR PALETTE
+   --------------------------------------------------------- */
+
+:root {
+    --ivory: #f6f3ec;
+    --paper: #f1eee5;
+    --cream: #ebe7dc;
+    --cream-dark: #d8d3c5;
+    --white: #fffdf8;
+
+    --brown-dark: #514542;
+    --brown: #756762;
+    --brown-light: #a1958d;
+
+    --rose: #d9a5a5;
+    --rose-dark: #b9787d;
+    --rose-light: #f1dddd;
+
+    --burgundy: #806068;
+
+    --gold: #b7a07a;
+    --gold-light: #d7c9a9;
+    --gold-pale: #f2ecdd;
+
+    --sage: #7f8b70;
+    --sage-light: #e5e9dc;
+
+    --red: #b77b72;
+    --red-light: #f1dfda;
+
+    --border: rgba(91, 82, 70, 0.12);
+
+    --shadow:
+        0 14px 35px rgba(81, 69, 59, 0.07);
+
+    --shadow-hover:
+        0 20px 45px rgba(81, 69, 59, 0.11);
+}
+
+
+/* ---------------------------------------------------------
+   PAGE
+   --------------------------------------------------------- */
+
+html {
+    background: #f1eee6;
+}
+
+body {
+    color: #514542;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 10%,
+            rgba(255,255,255,.9) 0%,
+            transparent 32%
+        ),
+        radial-gradient(
+            ellipse at 90% 80%,
+            rgba(218,194,184,.18) 0%,
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #f4f1e9 0%,
+            #eeeae1 45%,
+            #f3eee8 100%
+        );
+
+    background-attachment: fixed;
+}
+
+
+/* ---------------------------------------------------------
+   BOTANICAL BACKGROUND
+   --------------------------------------------------------- */
+
+body::before {
+    width: 520px;
+    height: 620px;
+
+    top: -70px;
+    left: -120px;
+
+    opacity: .34;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg width='520' height='620' viewBox='0 0 520 620' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%237b8872' stroke-width='1.5' opacity='.65'%3E%3Cpath d='M60 600 C100 450 145 330 300 80'/%3E%3Cpath d='M105 470 C55 420 45 360 58 300'/%3E%3Cpath d='M135 405 C205 365 220 305 220 245'/%3E%3Cpath d='M180 315 C125 275 120 225 135 180'/%3E%3Cpath d='M225 240 C280 205 305 155 302 105'/%3E%3C/g%3E%3Cg fill='%23a7b09a' opacity='.55'%3E%3Cellipse cx='58' cy='300' rx='18' ry='42' transform='rotate(-38 58 300)'/%3E%3Cellipse cx='82' cy='340' rx='17' ry='40' transform='rotate(40 82 340)'/%3E%3Cellipse cx='135' cy='180' rx='18' ry='43' transform='rotate(-35 135 180)'/%3E%3Cellipse cx='160' cy='215' rx='17' ry='40' transform='rotate(42 160 215)'/%3E%3Cellipse cx='220' cy='245' rx='17' ry='41' transform='rotate(-42 220 245)'/%3E%3Cellipse cx='245' cy='270' rx='16' ry='38' transform='rotate(40 245 270)'/%3E%3C/g%3E%3Cg fill='%23d7a5a5' opacity='.35'%3E%3Ccircle cx='302' cy='105' r='25'/%3E%3Ccircle cx='320' cy='88' r='21'/%3E%3Ccircle cx='284' cy='86' r='21'/%3E%3Ccircle cx='302' cy='68' r='17'/%3E%3C/g%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    transform: rotate(-4deg);
+}
+
+
+/* ---------------------------------------------------------
+   MAIN CONTAINER
+   --------------------------------------------------------- */
+
+.app {
+    max-width: 680px;
+}
+
+
+/* ---------------------------------------------------------
+   HEADER
+   --------------------------------------------------------- */
+
+.header {
+    padding-top: 45px;
+    padding-bottom: 42px;
+}
+
+
+/* Replace the star ornament with a softer botanical symbol */
+.header::before {
+    content: "❀  ❁  ❀";
+
+    color: #b99a86;
+
+    font-size: 15px;
+    letter-spacing: 7px;
+
+    opacity: .65;
+}
+
+
+/* delicate hand-painted-looking divider */
+.header::after {
+    width: 150px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d4b8ad,
+            #b7a07a,
+            #d4b8ad,
+            transparent
+        );
+
+    opacity: .55;
+}
+
+
+/* ---------------------------------------------------------
+   LOGO
+   --------------------------------------------------------- */
+
+.logo {
+    width: 78px;
+    height: 78px;
+
+    border: none;
+
+    background:
+        radial-gradient(
+            circle at 45% 40%,
+            #fffdf8 0%,
+            #f4e5df 55%,
+            #ead5d0 100%
+        );
+
+    box-shadow:
+        0 12px 30px rgba(91,70,64,.08),
+        inset 0 0 0 6px rgba(255,255,255,.48);
+}
+
+.logo::before {
+    content: "❀";
+
+    color: #b9787d;
+
+    font-size: 45px;
+
+    text-shadow:
+        0 2px 8px rgba(150,100,100,.10);
+}
+
+
+/* ---------------------------------------------------------
+   TYPOGRAPHY
+   --------------------------------------------------------- */
+
+.header h1,
+.page-header h1,
+.menu-card h2,
+.order-information h2,
+.bag-information h2,
+.selected-bag-details h3,
+.empty-orders h2,
+.dashboard-heading h2 {
+    font-family:
+        "Bodoni 72",
+        "Didot",
+        "Baskerville",
+        Georgia,
+        serif;
+
+    font-weight: 400;
+
+    letter-spacing: -0.025em;
+}
+
+
+/* Main title */
+.header h1 {
+    font-size: 43px;
+    color: #514242;
+
+    text-shadow: none;
+}
+
+
+/* Subtitle */
+.header p {
+    color: #95827c;
+
+    font-family:
+        "Baskerville",
+        Georgia,
+        serif;
+
+    font-size: 13px;
+    letter-spacing: .16em;
+}
+
+
+/* ---------------------------------------------------------
+   CARDS
+   --------------------------------------------------------- */
+
+/*
+   IMPORTANT:
+   These are deliberately less "app-like".
+   Softer radius + flatter surfaces = botanical/editorial.
+*/
+
+.menu-card,
+.stat-card,
+.order-card,
+.bag-card,
+.selected-bag-preview,
+.empty-orders {
+    border: 1px solid rgba(112,98,87,.11);
+
+    background:
+        rgba(255,253,248,.72);
+
+    box-shadow:
+        0 12px 32px rgba(87,72,61,.055);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* More organic card shapes */
+.menu-card {
+    border-radius: 12px;
+}
+
+.stat-card {
+    border-radius: 12px;
+}
+
+.order-card {
+    border-radius: 14px;
+}
+
+.bag-card {
+    border-radius: 14px;
+}
+
+.selected-bag-preview {
+    border-radius: 14px;
+}
+
+.empty-orders {
+    border-radius: 14px;
+}
+
+
+/* Hover stays subtle */
+.menu-card:hover,
+.bag-card:hover,
+.order-card:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(183,160,122,.30);
+
+    box-shadow:
+        0 18px 42px rgba(87,72,61,.09);
+}
+
+
+/* Remove the obvious pink side stripe */
+.menu-card::before {
+    width: 1px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            #c99c9c,
+            #9ca58e,
+            transparent
+        );
+
+    opacity: 0;
+}
+
+
+/* ---------------------------------------------------------
+   ICONS
+   --------------------------------------------------------- */
+
+.icon,
+.stat-icon,
+.dashboard .menu-card .icon {
+    background:
+        linear-gradient(
+            145deg,
+            #eee8dc,
+            #f8f2ec
+        );
+
+    border: 1px solid rgba(137,126,107,.13);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.8),
+        0 5px 14px rgba(90,75,63,.055);
+
+    color: #80676a;
+}
+
+
+/* More organic icon shape */
+.icon {
+    border-radius: 50%;
+}
+
+.stat-icon {
+    border-radius: 50%;
+}
+
+
+/* ---------------------------------------------------------
+   MENU TEXT
+   --------------------------------------------------------- */
+
+.menu-card h2 {
+    color: #554646;
+
+    font-size: 21px;
+}
+
+.menu-card p {
+    color: #9a8981;
+}
+
+.arrow {
+    color: #ad9180;
+}
+
+.menu-card:hover .arrow {
+    color: #b9787d;
+}
+
+
+/* ---------------------------------------------------------
+   PAGE HEADERS
+   --------------------------------------------------------- */
+
+.page-header h1 {
+    color: #514242;
+}
+
+.page-header p {
+    color: #988981;
+}
+
+.back-button {
+    color: #80706a;
+}
+
+.back-button:hover {
+    color: #b9787d;
+}
+
+
+/* ---------------------------------------------------------
+   FORMS
+   --------------------------------------------------------- */
+
+.form-group label {
+    color: #9d7779;
+
+    font-size: 10px;
+    letter-spacing: .15em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    border: 1px solid rgba(116,101,89,.14);
+
+    border-radius: 9px;
+
+    background: rgba(255,254,250,.72);
+
+    color: #514542;
+
+    box-shadow:
+        inset 0 1px 2px rgba(80,65,55,.025);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #c9969b;
+
+    box-shadow:
+        0 0 0 3px rgba(201,150,155,.10);
+}
+
+
+/* ---------------------------------------------------------
+   BUTTONS
+   --------------------------------------------------------- */
+
+.save-order-button,
+.add-order-button {
+    border: none;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #967078,
+            #765860
+        );
+
+    box-shadow:
+        0 9px 22px rgba(90,65,70,.14);
+
+    letter-spacing: .09em;
+}
+
+.save-order-button:hover,
+.add-order-button:hover {
+    box-shadow:
+        0 13px 27px rgba(90,65,70,.18);
+}
+
+
+/* ---------------------------------------------------------
+   INVENTORY
+   --------------------------------------------------------- */
+
+.bag-photo-placeholder,
+.order-bag-photo-placeholder,
+.no-photo-preview,
+.inventory-result-photo {
+    background:
+        linear-gradient(
+            145deg,
+            #f6eee8,
+            #e7e8dc
+        );
+
+    color: #b27d83;
+}
+
+
+/* ---------------------------------------------------------
+   STOCK BADGES
+   --------------------------------------------------------- */
+
+.bag-stock {
+    background: #e6eadd;
+    color: #68745f;
+
+    border: 1px solid rgba(108,125,91,.10);
+}
+
+
+/* ---------------------------------------------------------
+   BAG ACTIONS
+   --------------------------------------------------------- */
+
+.bag-actions button {
+    border-radius: 8px;
+}
+
+.edit-bag-button {
+    background: #f0dddd;
+    color: #805b62;
+}
+
+.delete-bag-button {
+    background: #f0dfda;
+    color: #a96f69;
+}
+
+
+/* ---------------------------------------------------------
+   ORDERS
+   --------------------------------------------------------- */
+
+.order-information p {
+    color: #786c66;
+}
+
+.order-bag {
+    color: #806068 !important;
+}
+
+.order-date {
+    color: #a4968f !important;
+}
+
+
+/* ---------------------------------------------------------
+   PRE-ORDER
+   --------------------------------------------------------- */
+
+.preorder-badge {
+    border: 1px solid rgba(183,160,122,.25);
+
+    background: #f2ecde;
+
+    color: #88704c;
+
+    border-radius: 999px;
+}
+
+.order-card.preorder {
+    border-color: rgba(183,160,122,.28);
+}
+
+.order-card.preorder .order-information {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(243,237,220,.40),
+            transparent
+        );
+}
+
+
+/* ---------------------------------------------------------
+   DASHBOARD
+   --------------------------------------------------------- */
+
+.dashboard-label,
+.stat-label,
+.quick-heading {
+    color: #a58c68;
+}
+
+.dashboard-heading h2 {
+    color: #544544;
+}
+
+.stat-card h3 {
+    color: #554646;
+}
+
+
+/* ---------------------------------------------------------
+   ORDER TYPE BUTTONS
+   --------------------------------------------------------- */
+
+.order-type-button,
+.item-type-button {
+    border: 1px solid rgba(113,98,85,.12);
+
+    border-radius: 10px;
+
+    background: rgba(255,253,248,.65);
+
+    color: #76635e;
+}
+
+.order-type-button:hover,
+.item-type-button:hover {
+    border-color: rgba(202,153,157,.38);
+
+    background: #faf4ee;
+
+    box-shadow:
+        0 7px 17px rgba(100,78,70,.055);
+}
+
+.order-type-button.active,
+.item-type-button.active {
+    border-color: #d09a9e;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f2dddd,
+            #f8eee9
+        );
+
+    color: #805b62;
+
+    box-shadow:
+        0 8px 20px rgba(177,116,123,.10);
+}
+
+
+
+/* ---------------------------------------------------------
+   PRE-ORDER ENTRY
+   --------------------------------------------------------- */
+
+.preorder-entry {
+    border: 1px solid rgba(183,160,122,.27);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f6f1e5,
+            #f2e3df
+        );
+
+    box-shadow:
+        0 7px 20px rgba(110,90,70,.045);
+}
+
+.preorder-entry-icon {
+    background: #eee7d6;
+}
+
+.preorder-entry-heading h3 {
+    color: #574744;
+}
+
+.preorder-entry-heading p {
+    color: #998982;
+}
+
+.preorder-fields input,
+.preorder-fields textarea {
+    border-radius: 9px;
+
+    border-color: #d8cec3;
+
+    background: rgba(255,254,250,.78);
+}
+
+.preorder-note {
+    background: rgba(232,222,201,.48);
+    color: #876d42;
+}
+
+
+/* ---------------------------------------------------------
+   EMPTY STATE
+   --------------------------------------------------------- */
+
+.empty-orders {
+    background:
+        rgba(255,253,248,.65);
+}
+
+.empty-icon {
+    color: #cb999c;
+
+    filter:
+        drop-shadow(
+            0 4px 8px rgba(160,105,110,.10)
+        );
+}
+
+.empty-orders h2 {
+    color: #574744;
+}
+
+.empty-orders p {
+    color: #9b8b84;
+}
+
+
+/* ---------------------------------------------------------
+   COMPLETED ORDERS
+   --------------------------------------------------------- */
+
+.order-card.completed {
+    background:
+        rgba(236,233,225,.72);
+}
+
+
+/* ---------------------------------------------------------
+   SCROLLBAR
+   --------------------------------------------------------- */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            180deg,
+            #cfa5a5,
+            #aab197
+        );
+
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b9787d;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE — SAME FUNCTIONALITY, JUST THE NEW LOOK
+   --------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+    .header h1 {
+        font-size: 35px;
+    }
+
+    .menu-card,
+    .stat-card,
+    .order-card,
+    .bag-card {
+        border-radius: 11px;
+    }
+
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+}
+
